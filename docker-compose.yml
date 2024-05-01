@@ -69,5 +69,12 @@ services:
     command: composer install -d /var/www
     volumes:
       - ./:/var/www/
+  artisan:
+      build:
+          context: ./docker/php-fpm
+          dockerfile: php-cli.docker
+      volumes:
+          - ./:/var/www
+      entrypoint: [ "php", "/var/www/artisan" ]
 volumes:
   database:
