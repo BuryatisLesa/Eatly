@@ -16,3 +16,7 @@ migrate:
 	docker-compose run artisan migrate
 artisan:
 	docker-compose run artisan
+ps:
+	docker-compose ps
+refresh:
+	docker-compose run artisan migrate:refresh
