@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Posts\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +30,15 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+//Route::group(['middleware' => 'auth'], function () {
+//    Route::resource('posts', PostController::class);
+//    Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+//    Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+//    Route::get('/posts/update', [PostController::class, 'update'])->name('posts.update');
+//});
+Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+Route::get('/posts/update', [PostController::class, 'update'])->name('posts.update');
+Route::get('/posts/delete', [PostController::class, 'delete'])->name('posts.delete');

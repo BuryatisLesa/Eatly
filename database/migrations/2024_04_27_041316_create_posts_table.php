@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('news', function (Blueprint $table) {
-            $table->id('news_id');
+        Schema::create('posts', function (Blueprint $table) {
+            $table->id('post_id');
             $table->foreignId('user_id')->constrained('users', 'user_id');
             $table->string('title', 60)->comment('Заголовок');
             $table->text('content')->comment('Текст поста');
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('news');
+        Schema::dropIfExists('posts');
     }
 };

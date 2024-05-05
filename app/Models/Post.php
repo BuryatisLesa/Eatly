@@ -6,12 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class News extends Model
+class Post extends Model
 {
     use HasFactory;
-
     /**
-     * Атрибуты таблицы news
+     * Атрибуты таблицы post
      * @var array<int,string>
      */
     protected $fillable =
@@ -25,12 +24,12 @@ class News extends Model
      * Наименование таблицы
      * @var string
      */
-    protected $table = 'news';
+    protected $table = 'posts';
     /**
      * Первичный ключ
      * @var int
      */
-    protected $primaryKey = 'news_id';
+    protected $primaryKey = 'post_id';
 
     /**
      * Связи one-to-many c users
@@ -39,5 +38,4 @@ class News extends Model
     {
         return $this->belongsTo(User::class);
     }
-
 }

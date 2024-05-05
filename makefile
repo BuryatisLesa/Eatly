@@ -20,3 +20,5 @@ ps:
 	docker-compose ps
 refresh:
 	docker-compose run artisan migrate:refresh
+logs:
+	docker-compose logs

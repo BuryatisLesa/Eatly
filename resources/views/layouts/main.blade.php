@@ -1,0 +1,12 @@
+<html>
+<head>
+    <title>
+        Eatly
+    </title>
+</head>
+<body>
+@section('content')
+    <div>{{$posts}}</div>
+@endsection
+</body>
+</html>
